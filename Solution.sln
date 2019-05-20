@@ -109,6 +109,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A02 - 3D Primitives", "A02 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A03 - LERP", "A03 - LERP\A03 - LERP.vcxproj", "{63E8C63D-1CCD-43F2-9E0F-1510677DE856}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C05_Shaders", "E03 Shaders\C05_Shaders.vcxproj", "{4D90041F-13D3-4E32-BE20-35B86932105A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -289,6 +291,10 @@ Global
 		{63E8C63D-1CCD-43F2-9E0F-1510677DE856}.Debug|x86.Build.0 = Debug|Win32
 		{63E8C63D-1CCD-43F2-9E0F-1510677DE856}.Release|x86.ActiveCfg = Release|Win32
 		{63E8C63D-1CCD-43F2-9E0F-1510677DE856}.Release|x86.Build.0 = Release|Win32
+		{4D90041F-13D3-4E32-BE20-35B86932105A}.Debug|x86.ActiveCfg = Debug|Win32
+		{4D90041F-13D3-4E32-BE20-35B86932105A}.Debug|x86.Build.0 = Debug|Win32
+		{4D90041F-13D3-4E32-BE20-35B86932105A}.Release|x86.ActiveCfg = Release|Win32
+		{4D90041F-13D3-4E32-BE20-35B86932105A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

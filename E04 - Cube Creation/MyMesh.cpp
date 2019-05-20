@@ -12,10 +12,33 @@ void MyMesh::GenerateCircle(float a_fRadius, int a_nSubdivisions, vector3 a_v3Co
 	if (a_nSubdivisions > 360)
 		a_nSubdivisions = 360;
 
-	/*
-		Calculate a_nSubdivisions number of points around a center point in a radial manner
+	/*		Calculate a_nSubdivisions number of points around a center point in a radial manner
 		then call the AddTri function to generate a_nSubdivision number of faces
 	*/
+
+	float pos = 0;
+	float angle = 360 / a_nSubdivisions;
+
+	std::vector<vector3> points;
+
+	for (int i = 0; i < a_nSubdivisions; i++)
+	{
+		vector3 point = vector3(cos(i * angle*PI/180)*a_fRadius, sin(i * angle*PI / 180)*a_fRadius, a_fRadius );
+		points.emplace_back(point);
+	}
+
+	for (int i = 0; i < a_nSubdivisions; i++)
+	{
+		if (i < a_nSubdivisions - 1)
+		{
+			AddTri(points[i],points[i+1], vector3(0, 0, a_fRadius));
+		}
+
+		else
+		{
+			AddTri(points[i], points[0], vector3(0, 0, a_fRadius));
+		}
+	}
 
 	// Adding information about color
 	CompleteMesh(a_v3Color);
@@ -175,7 +198,7 @@ void MyMesh::AddTri(vector3 a_vBottomLeft, vector3 a_vBottomRight, vector3 a_vTo
 {
 	//C
 	//| \
-		//A--B
+	//A--B
 //This will make the triangle A->B->C 
 	AddVertexPosition(a_vBottomLeft);
 	AddVertexPosition(a_vBottomRight);
@@ -218,7 +241,7 @@ void MyMesh::GenerateCube(float a_fSize, vector3 a_v3Color)
 	vector3 point6(fValue, fValue, -fValue); //6
 	vector3 point7(-fValue, fValue, -fValue); //7
 
-											  //F
+	//F
 	AddQuad(point0, point1, point3, point2);
 
 	//B
